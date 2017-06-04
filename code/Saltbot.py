@@ -88,9 +88,14 @@ async def inGame (_nom):
 @my_bot.command()
 async def saltBot():
     await my_bot.say("!saltBot : affiche l'aide du bot")
-    await my_bot.say("!kda player : affiche le Kda du joueur pass� en param�tre")
+    await my_bot.say("!kda player : affiche le Kda du joueur passé en paramètre")
     await my_bot.say("!server : permet de savoir si le serveur europe est en ligne")
     return await my_bot.say("!inGame player : permet de savoir si le joueur est en game")
+
+@my_bot.command()
+async def base():
+    return await my_bot.say("all your base are belong to us.")
+
 
 #Kda command
 @my_bot.command()
@@ -100,7 +105,7 @@ async def kda(_nom):
     loop.run_until_complete(kills,deaths,assists,kda = GetKDA(_nom))
 
 
-    return await my_bot.say("Le joueur {0} a un  K/D/A de {1}/{2}/{3} = {4} sur les 20 derni�res parties".format(_nom,kills, deaths, assists, round(kda, 3)))
+    return await my_bot.say("Le joueur {0} a un  K/D/A de {1}/{2}/{3} = {4} sur les 20 dernières parties".format(_nom,kills, deaths, assists, round(kda, 3)))
 
 
 
